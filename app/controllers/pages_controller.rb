@@ -21,8 +21,15 @@ class PagesController < ApplicationController
     if user_signed_in?
       @contacts = User.find(current_user.id).contacting
     end
-    @promotes = PromoteActivity.eager_load(activity: :category).where(payed: true)
 
+
+    @promotes = Activity.eager_load(:category).sample(2)
+    PromoteActivity.eager_load(activity: :category).where(payed: true).each do |promote|
+      @promotes << promote.activity
+    end
+    
+  
+    
 
     @sucesos = []
     if user_signed_in?
