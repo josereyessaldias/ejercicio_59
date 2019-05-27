@@ -18,9 +18,11 @@
 				<ol>
 					<% @collection.activities.each do |activity| %>
 						<li><h6><%= link_to activity.name, activity_path(activity) %>
-							<% current_user.activities.each do |my_act| %>
-								<% if my_act.id == activity.id %>
-									<i>actividad realizada</i>
+							<% if user_signed_in? %>
+								<% current_user.activities.each do |my_act| %>
+									<% if my_act.id == activity.id %>
+										<i>actividad realizada</i>
+									<% end %>
 								<% end %>
 							<% end %>
 
