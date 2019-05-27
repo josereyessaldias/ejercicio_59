@@ -11,6 +11,11 @@ ActiveAdmin.register Activity do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+	controller do
+		def scoped_collection
+			end_of_association_chain.includes(:category,:user)
+		end
+	end
 
 	permit_params :name, :author, :category, :user
 

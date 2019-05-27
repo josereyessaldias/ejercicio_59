@@ -1,8 +1,8 @@
 # README
 
-Resolví el problema que provocaba ActiveAdmin con los css y javascripts. Mejoré el diseño del Home y del User Page. Mejoré en general el código. Como dato curioso: el googlemap me funciona en Heroku pero no en el servidor local
-
-repositorio heroku: https://ejercicio58.herokuapp.com
+Resolví casi todos los problemas de N+1 queries y trabajé con al gema Bullet en desarrollo.
+(me quedó un problema de N+1 queries en el Home, pero no me consta que sea necesario resolverlo)
+Habilité las actividades sugeridas + las promocionadas en la barra derecha.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
